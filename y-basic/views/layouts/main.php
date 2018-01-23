@@ -27,37 +27,14 @@ AppAsset::register($this);
 <?php $this->beginBody() ?>
 
 <div class="wrap">
-    <?php
-    NavBar::begin([
-        'brandLabel' => Yii::$app->name,
-        'brandUrl' => Yii::$app->homeUrl,
-        'options' => [
-            'class' => 'navbar-inverse navbar-fixed-top',
-        ],
-    ]);
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => [
-            ['label' => 'Home', 'url' => ['/site/index']],
-            ['label' => 'About', 'url' => ['/site/about']],
-            ['label' => 'Contact', 'url' => ['/site/contact']],
-            Yii::$app->user->isGuest ? (
-                ['label' => 'Login', 'url' => ['/site/login']]
-            ) : (
-                '<li>'
-                . Html::beginForm(['/site/logout'], 'post')
-                . Html::submitButton(
-                    'Logout (' . Yii::$app->user->identity->username . ')',
-                    ['class' => 'btn btn-link logout']
-                )
-                . Html::endForm()
-                . '</li>'
-            )
-        ],
-    ]);
-    NavBar::end();
-    ?>
-
+    <ul id="nav"> 
+        <li><a href="<?php echo Yii::$app->request->hostInfo?>/index.php?r=frontend/index/index">首页</a></li> 
+        <li><a href="http://www.divcss5.com/html/">HTML教程</a></li> 
+        <li><a href="http://www.divcss5.com/rumen/">CSS基础</a></li> 
+        <li><a href="http://www.divcss5.com/css-tool/">CSS开发工具</a></li> 
+        <li><a href="http://www.divcss5.com/css-texiao/">CSS特效</a></li> 
+        <li><a href="http://www.divcss5.com/wenji/">CSS问题</a></li> 
+    </ul> 
     <div class="container">
         <?= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
@@ -69,9 +46,9 @@ AppAsset::register($this);
 
 <footer class="footer">
     <div class="container">
-        <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
-
-        <p class="pull-right"><?= Yii::powered() ?></p>
+        <p class="pull-left">&copy; NeedPower.e <?= date('Y') ?></p>
+        <p class="pull-right">一个人难免崇拜流浪 by HanaLosoua</p>
+       <!--  <p class="pull-right"><?= Yii::powered() ?></p> -->
     </div>
 </footer>
 
